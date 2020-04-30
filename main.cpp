@@ -8,7 +8,7 @@ std::vector<int> tokenize(const std::string& s,const char delim= ';');
 
 int main(int argc, char** argv) { 
     if(argv[1] == NULL) {
-        std::cout << "ERROR: Archivo no seleccionadon\n";
+        std::cout << "ERROR: Archivo no seleccionado\n";
         return EXIT_FAILURE;
     }
     std::ifstream file(argv[1]);
