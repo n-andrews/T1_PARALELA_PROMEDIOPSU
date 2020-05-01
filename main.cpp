@@ -4,7 +4,7 @@
 #include <string>
 #include <chrono>
 
-#define DEBUG_MODE !true
+#define DEBUG_MODE !false
 
 float calcMean(const std::vector<int>& v);
 std::pair<int, float> tokenize(const std::string s,const char delim= ';');
@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    std::ifstream file("archivo.csv");
+    std::ifstream file(argv[1]);
     std::cout << "i: " << argv[1] << std::endl;
     std::string outputStr = "promediosPSU.csv";
     std::cout << "o: " << outputStr << std::endl;
@@ -27,15 +27,18 @@ int main(int argc, char** argv) {
     std::string line;
         while(!file.eof()) {
             std::getline(file,line);
-            numlines = numlines + 1;
+            numlines += 1;
         }
     file.close();
     file.open(argv[1]);
 
-    #pragma omp parallel for ordered schedule(static)
+    #pragma omp parallel for ordered schedule(auto)
     for(int i = 0; i < numlines; i++) {
+    #pragma omp ordered 
+    {
         std::getline(file,line);
         pair = tokenize(line);
+    }
         build = std::to_string(pair.first) + ";" + std::to_string(pair.second) + "\n";
     #pragma omp ordered
         output << build;
