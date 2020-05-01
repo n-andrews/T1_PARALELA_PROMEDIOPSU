@@ -8,16 +8,12 @@ float calcMean(const std::vector<int>& v);
 std::vector<int> tokenize(const std::string& s,const char delim= ';');
 
 int main(int argc, char** argv) { 
-    auto start = std::chrono::high_resolution_clock::now(); 
     if(argv[1] == NULL) {
         std::cout << "ERROR: Archivo no seleccionado\n";
         return EXIT_FAILURE;
     }
     std::ifstream file(argv[1]);
-    std::cout << "i: " << argv[1] << std::endl;
-    std::string outputStr = "promediosPSU.csv";
-    std::cout << "o: " << outputStr << std::endl;
-    std::ofstream output(outputStr);
+    std::ofstream output("promedios_psu.csv");
     std::vector<int> values;
     std::string build="";
     float mean = 0.f;
@@ -29,12 +25,7 @@ int main(int argc, char** argv) {
     }
     file.close();
     output.close();
-    std::string pause;
-    auto stop = std::chrono::high_resolution_clock::now(); 
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop-start);
-    std::cout << "Duration: " << duration.count() << "ms\n";
-    std::cout << "--- TALLER 01 ---\n [ Nicolas Andrews Sandoval ]\n[ Otro integrante ]\n [ Otro mas ]\n";
-    std::cin >> pause;
+    std::cout << "--- TALLER 01 ---\n[ Daniel Aguilera Tasso ]\n[ Nicolás Andrews Sandoval ]\n[ Allan Morales Prado ]\n";
     return EXIT_SUCCESS;
 }
 
@@ -48,6 +39,7 @@ float calcMean(const std::vector<int>& v) {
     return f;
 }
 
+// Separa los valores y los mete en un vector.
 std::vector<int> tokenize(const std::string& s,const char delim) {
     std::vector<int> ret_val;
     std::string str;
