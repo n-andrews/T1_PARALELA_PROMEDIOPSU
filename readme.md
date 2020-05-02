@@ -17,7 +17,10 @@ Para C++ OpenMP:
 ```
 g++ -O3 -std=gnu++14 -fopenmp main_omp
 ```
-
+### Instalar Packages Dart
+```
+pub install
+```
 ### Ejecución
 - C++
     `./main.exe examples/archivo.csv`
