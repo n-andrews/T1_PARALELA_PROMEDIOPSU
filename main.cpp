@@ -2,7 +2,6 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <chrono>
 
 float calcMean(const std::vector<int>& v);
 std::vector<int> tokenize(const std::string& s,const char delim= ';');
@@ -17,18 +16,21 @@ int main(int argc, char** argv) {
     std::vector<int> values;
     std::string build="";
     float mean = 0.f;
+
     for(std::string line; std::getline(file, line);) {
         values = tokenize(line);
         mean = calcMean(values);
         build = std::to_string(values[0]) + ";" + std::to_string(mean) + "\n";
         output << build;
     }
+
     file.close();
     output.close();
     std::cout << "--- TALLER 01 ---\n[ Daniel Aguilera Tasso ]\n[ Nicolás Andrews Sandoval ]\n[ Allan Morales Prado ]\n";
     return EXIT_SUCCESS;
 }
 
+// Calculo de la media segun el vector de entrada
 float calcMean(const std::vector<int>& v) {
     int r = 0;
     float f = 0.f;
