@@ -15,15 +15,17 @@ g++ -O3 -std=gnu++14 main.cpp
 ```
 Para C++ OpenMP:
 ```
-g++ -O3 -std=gnu++14 -fopenmp main_omp
+g++ -O3 -std=gnu++14 -fopenmp main_omp.cpp
 ```
 ### Instalar Packages Dart
 ```
 pub install
 ```
 ### Ejecución
-- C++
+- C++ Windows
     `./main.exe examples/archivo.csv`
+- C++ Linux
+    `./a.out examples/archivo.csv`
 - Dart
     `dart promedios.dart examples/archivo.csv`
 
