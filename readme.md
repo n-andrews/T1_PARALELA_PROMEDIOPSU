@@ -1,4 +1,4 @@
-# Taller 1 - Computación paralela y Distribuida - "Promedios PSU"
+# Taller 1 - Computación paralela y Distribuida - "Promedios PSU" 
 El taller consiste en escribir un programa en C++, C++ usando OpenMP y Dart que pueda leer un archivo con los puntajes psu de una persona con el siguiente formato "rut;nem;ranking;lenguaje;matematicas;ciencias;historia" y luego deberá escribir otro archivo con el promedio simple de estos puntajes por rut, teniendo finalmente un archivo con entradas "rut;promedio".
 
 Los programas en C++ escriben el archivo "promedios_psu.csv" mientras que el programa en Dart escribe el archivo "promediosDart.csv"
@@ -31,3 +31,4 @@ pub install
 - Daniel Aguilera Tasso
 - Nicolás Andrews Sandoval
 - Allan Morales Prado
+(Grupo 6)
